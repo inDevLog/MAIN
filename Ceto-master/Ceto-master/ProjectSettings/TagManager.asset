@@ -10,6 +10,7 @@ TagManager:
   - banTL
   - banduoi
   - bandon
+  - mpu
   layers:
   - Default
   - TransparentFX

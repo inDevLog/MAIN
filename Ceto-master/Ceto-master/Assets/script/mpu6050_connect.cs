@@ -7,6 +7,7 @@ using System.IO.Ports;
 public class mpu6050_connect : MonoBehaviour
 {
     public GameObject den_tinhieu;
+    public float timer_bamsat =0 ;
     SerialPort stream;
     public Renderer tinhieu_mausac;
     public AudioSource tieng_beep;
@@ -68,12 +69,14 @@ public class mpu6050_connect : MonoBehaviour
             Debug.Log(hit.transform.name);
             if (hit.transform.name == "F 15 C")
             {
+                timer_bamsat += Time.deltaTime;
                 if (!tieng_beep.isPlaying) tieng_beep.Play();
                 tinhieu_mausac.material.SetColor("_Color", Color.green);
             }
         }
         else
         {
+            timer_bamsat = 0;
             if (tieng_beep.isPlaying) tieng_beep.Stop();
             tinhieu_mausac.material.SetColor("_Color", Color.black);
 

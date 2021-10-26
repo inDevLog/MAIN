@@ -8,7 +8,9 @@ using TMPro;
 public class btn_chuyenchedo: MonoBehaviour
 {
     public TMP_Text hientai_culy, hientai_vantoc, hientai_docao, hientai_culyTL_MT, hientai_thamso;
-
+    public TMP_Text ogs_culy, ogs_vantoc, ogs_docao, ogs_tl_mt, ogs_thamso;
+    public TMP_Text phong_culy, phong_vantoc, phong_docao, phong_tl_mt, phong_thamso;
+    public TMP_Text trung_culy, trung_vantoc, trung_docao, trung_tl_mt, trung_thamso;
     public AudioSource audioData;
     public Transform to, diem_batdau;
     public float culy_old = 0, culy_hientai, culy_updated;
@@ -64,6 +66,7 @@ public class btn_chuyenchedo: MonoBehaviour
     public heat_flares mode_phongnhieu;
     public ban_tenlua banTenlua;
     public float thoigian_phongnhieu = 0;
+    public Vector3 forward;
     /// <summary>
     /// 
     /// </summary>
@@ -159,7 +162,7 @@ public class btn_chuyenchedo: MonoBehaviour
     void Update()
     {
         hinhchieu_mt1_that.transform.position = new Vector3(muctieu1_that.transform.position.x, 0, muctieu1_that.transform.position.z); 
-        Vector3 forward = hinhchieu_mt1_that.TransformDirection(Vector3.forward) * 100;
+        forward = hinhchieu_mt1_that.TransformDirection(Vector3.forward) * 100;
         hinhchieu_mt1_that.transform.rotation = Quaternion.Euler(0, muctieu1_that.transform.rotation.eulerAngles.y, 0);
         Debug.DrawRay(hinhchieu_mt1_that.transform.position, forward, Color.green);
         //Debug.Log("Tham so !!!" + thamso(hinhchieu_mt1_that.transform.position, forward, tauta.transform.position));

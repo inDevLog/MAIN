@@ -20,7 +20,7 @@ public class ban_tenlua : MonoBehaviour
     public Transform posCurrent;
     public bool ketqua_ban = false;
     public ParticleSystem maybay_chay, maybay_no;
-    void Start()
+    void Start()    
     {
         ban_duoi = GameObject.FindGameObjectWithTag("TagA").GetComponent<btn_chuyenchedo>();
         laydulieu_chedo = GameObject.FindGameObjectWithTag("bandon").GetComponent<chedo_bandon>();
@@ -30,7 +30,11 @@ public class ban_tenlua : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (laydulieu_chedo.chedo_don == true && laydulieu_chedo.chedo_duoi == false) muctieu.transform.position = laydulieu_chedo.pointBandon.transform.position;
+        if (laydulieu_chedo.chedo_don == true && laydulieu_chedo.chedo_duoi == false)
+        {
+            laydulieu_chedo.pointBandon.transform.parent = null;
+            muctieu.transform.position = laydulieu_chedo.pointBandon.transform.position;
+        }
         else if (laydulieu_chedo.chedo_don == false && laydulieu_chedo.chedo_duoi == true) muctieu.transform.position = ban_duoi.muctieu1_that.transform.position;
         Debug.Log(muctieu.transform.position.x);
         if (khoi.isPlaying) khoi.Stop();
