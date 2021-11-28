@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trung_dannhieu : MonoBehaviour
+public class nhan_xuat : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,5 @@ public class trung_dannhieu : MonoBehaviour
     void Update()
     {
         
-    }
-    void OnParticleCollision(GameObject other)
-    {
-        Debug.Log("Trung");
     }
 }
